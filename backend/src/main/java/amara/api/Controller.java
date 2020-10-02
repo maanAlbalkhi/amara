@@ -14,7 +14,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import amara.api.beans.LoginBean;
-import amara.api.beans.RegistrationRean;
+import amara.api.beans.RegistrationBean;
 import amara.db.DBController;
 
 @RestController
@@ -38,7 +38,7 @@ public class Controller extends ResponseEntityExceptionHandler{
 	}
 	
 	@PostMapping("/register")
-	public String register(@RequestBody RegistrationRean request) throws SQLException, IOException {
+	public String register(@RequestBody RegistrationBean request) throws SQLException, IOException {
 		final String results = DBController.registerUser(request.getFirst_name(),
 				request.getLast_name(), 
 				request.getEmail(),

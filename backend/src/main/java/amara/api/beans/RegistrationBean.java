@@ -1,6 +1,6 @@
 package amara.api.beans;
 
-public class RegistrationRean {
+public class RegistrationBean {
 	
 	private String first_name;
 	private String last_name;

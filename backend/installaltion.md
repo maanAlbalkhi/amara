@@ -12,11 +12,12 @@ sudo apt install maven
 ## Compile and build
 navigate to amara/backend
 ```
-maven install
+mvn install
 ```
 
 ## Run the backend
 In folder target
 ```
+cd amara/backend/target
 java -jar amara_backend-0.0.1-SNAPSHOT-spring-boot.jar
 ```
