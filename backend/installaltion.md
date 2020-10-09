@@ -18,6 +18,6 @@ mvn install
 ## Run the backend
 In folder target
 ```
-cd amara/backend/target
-java -jar amara_backend-0.0.1-SNAPSHOT-spring-boot.jar
+cd amara/backend/
+java -jar target/amara_backend-0.0.1-SNAPSHOT-spring-boot.jar
 ```
