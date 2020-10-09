@@ -8,9 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.ComponentScan;
 
 
 @SpringBootApplication
+@ComponentScan
 public class Service extends SpringBootServletInitializer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
 	
 //	@ConfigurationProperties("database")
@@ -34,7 +36,7 @@ public class Service extends SpringBootServletInitializer implements WebServerFa
 	public void customize(ConfigurableServletWebServerFactory factory) {
 //		try {
 			//factory.setPort(Config.getInt("app.port"));
-			factory.setPort(8080);
+			factory.setPort(9999);
 //		} catch (NumberFormatException e) {
 //			System.out.println(e);
 //		} catch (IOException e) {

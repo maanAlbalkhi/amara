@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <title> 
+      Amara
+    </title> 
+  </head> 
+  
+  <body style="text-align:center;" id="body"> 
+    <h1 style="color:green;"> 
+      Media List
+    </h1> 
+  	
+	
+	<a href="javascript:stream();" id="media_entry"></a>
+
+	 <script>			
+		// Creating a XHR object 
+		let xhr = new XMLHttpRequest(); 
+		let url = "/media_list";
+	
+		// open a connection 
+		xhr.open("GET", url, true);
+		xhr.onreadystatechange = function() { 
+        if (xhr.readyState == 4 && xhr.status == 200)
+            document.getElementById("media_entry").innerHTML = xhr.responseText;
+    	}
+		// Sending data with the request 
+		xhr.send();
+		
+		function stream() {
+			window.location.replace("stream.html");
+		}
+
+
+	</script> 
+  
+  </body> 
+</html> 

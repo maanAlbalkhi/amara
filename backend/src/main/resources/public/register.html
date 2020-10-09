@@ -1,0 +1,70 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <title> 
+      Amara
+    </title> 
+  </head> 
+  
+  <body style="text-align:center;" id="body"> 
+    <h1 style="color:green;"> 
+      Amara
+    </h1> 
+  
+    <p> 
+        <!-- Making a text input -->
+		<input type="text" id="first_name" placeholder="First Name"> <br>
+		<input type="text" id="last_name" placeholder="Last Name"> <br>
+        <input type="email" id="email" placeholder="Email"> <br>
+        <input type="password" id="password" placeholder="Password"> <br>
+         
+          
+        <!-- Button to send data -->
+        <button onclick="sendJSON()">register</button> 
+  
+      <!-- For printing result from server -->
+      <p class="result" style="color:green"></p> 
+      
+   </p> 
+  
+  <!-- Include the JavaScript file -->
+  <script>
+function sendJSON(){ 
+			
+	let first_name = document.querySelector('#first_name');
+	let last_name = document.querySelector('#last_name'); 
+	let email = document.querySelector('#email'); 
+	let password = document.querySelector('#password'); 
+	
+	// Creating a XHR object 
+	let xhr = new XMLHttpRequest(); 
+	let url = "/register";
+
+	// open a connection 
+	xhr.open("POST", url, true); 
+
+	// Set the request header i.e. which type of content you are sending 
+	xhr.setRequestHeader("Content-Type", "application/json"); 
+
+	// Create a state change callback 
+	xhr.onreadystatechange = function () { 
+		if (xhr.readyState === 4 && xhr.status === 200) { 
+
+			window.location.replace("index.html");
+
+		} 
+	}; 
+
+	// Converting JSON data to string 
+	var data = JSON.stringify({ "first_name":first_name.value,
+		"last_name":last_name.value,
+		"email": email.value,
+		"password": password.value }); 
+
+	// Sending data with the request 
+	xhr.send(data); 
+}
+</script> 
+  
+  </body> 
+</html> 
